@@ -47,7 +47,7 @@ function startPicking() {
         loader.append(loaderBG);
 
         let loaderText = document.createElement('div');
-        loaderText.className = 'text';
+        loaderText.className = 'TEKST';
         loaderBG.append(loaderText);
         loaderText.innerText = `${pickKey}`;
 

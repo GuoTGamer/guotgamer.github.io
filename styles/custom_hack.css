@@ -21,7 +21,7 @@ body {
 }
 
 button, input[type=submit] {
-    font-family: 'calibri';
+    font-family: 'Bauhaus 93';
     background-color: grey;
     color: white;
     font-size: max(1.8vw, 18px);
@@ -175,19 +175,19 @@ input[type=submit]:hover {
     border: solid .15vw black;
 }
 
-.CIRCLE {
+.RONDJE {
     border-radius: 50%;
 }
 
-.TRIANGLE {
+.DRIEHOEK {
     clip-path: polygon(50% 0, 0 100%, 100% 100%);
 }
 
-.SQUARE {
+.VIERKANT {
     border-radius: 0;
 }
 
-.RECTANGLE {
+.RECHTHOEK {
     height: 6.25vw;
     margin-top: 4.55vw;
 }

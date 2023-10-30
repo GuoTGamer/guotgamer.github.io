@@ -1,6 +1,6 @@
 let container = document.getElementById('hackBlock');
 let starter = document.getElementsByClassName('settings')[0];
-let blockCounter = 3;
+let blockCounter = 4;
 let promptCounter;
 let memTime;
 let ansTime;
@@ -14,7 +14,7 @@ function puzzBlock(){
 
 	let colors = ['ROOD', 'BLAUW', 'PAARS', 'GEEL', 'ORANJE', 'GROEN', 'ZWART', 'WIT']
 	let shapes = ['VIERKANT', 'RECHTHOEK', 'DRIEHOEK', 'RONDJE']
-	let prompts = ['ACHTERGRONDKLEUR', 'VORM', 'VORM KLEUR', 'TEKST ACHTERGRONDKLEUR', 'KLEUR TEKST', 'VORM TEKST', 'NUMMER KLEUR'];
+	let prompts = ['ACHTERGRONDKLEUR', 'VORM', 'VORM KLEUR', 'TEKST ACHTERGRONDKLEUR', 'COLOR TEKST', 'VORM TEKST', 'NUMMERKLEUR'];
 	
 	let selectedColors = [];
 	while (selectedColors.length < 2) {
@@ -65,9 +65,9 @@ puzzBlock.prototype.resolve = function() {
 		'VORM': this.shape, 
 		'VORM KLEUR': this.shapeColor, 
 		'TEKST ACHTERGRONDKLEUR': this.textColor, 
-		'KLEUR TEKST': this.colorText, 
+		'COLOR TEKST': this.colorText, 
 		'VORM TEKST': this.shapeText, 
-		'NUMMER KLEUR': this.numberColor
+		'NUMMERKLEUR': this.numberColor
 	}[this.prompt];
 }
 
@@ -128,7 +128,7 @@ puzzBlock.prototype.changeBlock = function() {
 	this.block.append(block_number_text);
 
 	let block_shape_text = document.createElement('p');
-	block_shape_text.className = 'shapeText';
+	block_shape_text.className = 'VORMText';
 	block_shape_text.style.color = colorPalette[this.textColor];
 	block_shape_text.innerText = this.shapeText;
 	this.block.append(block_shape_text);
