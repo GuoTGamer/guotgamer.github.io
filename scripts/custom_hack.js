@@ -13,7 +13,7 @@ let digits = [];
 function puzzBlock(){
 
 	let colors = ['ROOD', 'BLAUW', 'PAARS', 'GEEL', 'ORANJE', 'GROEN', 'ZWART', 'WIT']
-	let shapes = ['VIERKANT', 'RECHTHOEK', 'DRIEHOEK', 'RONDJE']
+	let shapes = ['VIERKANT', 'RECHTHOEK', 'DRIEHOEK', 'CIRKEL']
 	let prompts = ['ACHTERGRONDKLEUR', 'VORM', 'VORM KLEUR', 'TEKST ACHTERGRONDKLEUR', 'COLOR TEKST', 'VORM TEKST', 'NUMMERKLEUR'];
 	
 	let selectedColors = [];

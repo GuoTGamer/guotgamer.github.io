@@ -156,7 +156,7 @@ function startHack(){
 				'ZWART': 'BLACK',
 				'WIT': 'WHITE',
 			};
-			let shapes = ['VIERKANT', 'RECHTHOEK', 'DRIEHOEK', 'RONDJE']
+			let shapes = ['VIERKANT', 'RECHTHOEK', 'DRIEHOEK', 'CIRKEL']
 			let prompts = ['ACHTERGRONDKLEUR', 'VORM', 'VORM KLEUR', 'TEKST ACHTERGRONDKLEUR', 'COLOR TEKST', 'VORM TEKST', 'NUMMERKLEUR'];
 			let blocks = [block_one, block_two, block_three];
 			let answers = [];
