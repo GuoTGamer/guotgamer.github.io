@@ -16,9 +16,9 @@ function quizBlock(background, shape, shapeColor, textColor, numberColor, shapeT
 		'VORM': this.shape, 
 		'VORM KLEUR': this.shapeColor, 
 		'TEKST ACHTERGRONDKLEUR': this.textColor, 
-		'COLOR TEKST': this.colorText, 
+		'KLEUR TEKST': this.colorText, 
 		'VORM TEKST': this.shapeText, 
-		'NUMMERKLEUR': this.numberColor
+		'NUMMER KLEUR': this.numberColor
 	};
 }
 
@@ -52,8 +52,8 @@ function startHack(){
 		container.append(hackBlocksSection);
 
 		numbers = [];
-		while (numbers.length < 3) {
-			let num = Math.ceil(Math.random()*3);
+		while (numbers.length < 4) {
+			let num = Math.ceil(Math.random()*4);
 			if (!numbers.includes(num)){
 				numbers.push(num);
 			}
@@ -103,14 +103,14 @@ function startHack(){
 				container.innerHTML = '';
 				let failureMessage = document.createElement('p');
 				failureMessage.className = 'middleText fail';
-				failureMessage.innerText = 'SYSTEM DID NOT ACCEPT YOUR ANSWERS';
+				failureMessage.innerText = 'HET SYSTEEM ACCEPTEERDE JE ANTWOORD NIET';
 				container.append(failureMessage);
 				let retryForm = document.createElement('form');
 				retryForm.setAttribute('action', 'bank_hack.html');
 				container.append(retryForm);
 				let retryButton = document.createElement('button');
 				retryButton.className = 'retry';
-				retryButton.innerText = 'Retry';
+				retryButton.innerText = 'Opnieuw';
 				retryForm.append(retryButton);
 				let homeForm = document.createElement('form');
 				homeForm.setAttribute('action', 'index.html');
@@ -133,7 +133,7 @@ function startHack(){
 				container.append(retryForm);
 				let retryButton = document.createElement('button');
 				retryButton.className = 'retry';
-				retryButton.innerText = 'Retry';
+				retryButton.innerText = 'Opnieuw';
 				retryForm.append(retryButton);
 				let homeForm = document.createElement('form');
 				homeForm.setAttribute('action', 'index.html');
@@ -156,17 +156,17 @@ function startHack(){
 				'ZWART': 'BLACK',
 				'WIT': 'WHITE',
 			};
-			let shapes = ['VIERKANT', 'RECHTHOEK', 'DRIEHOEK', 'CIRKEL']
-			let prompts = ['ACHTERGRONDKLEUR', 'VORM', 'VORM KLEUR', 'TEKST ACHTERGRONDKLEUR', 'COLOR TEKST', 'VORM TEKST', 'NUMMERKLEUR'];
-			let blocks = [block_one, block_two, block_three];
+			let shapes = ['VIERKANT', 'RECHTHOEK', 'DRIEHOEK', 'RONDJE']
+			let prompts = ['ACHTERGRONDKLEUR', 'VORM', 'VORM KLEUR', 'TEKST ACHTERGRONDKLEUR', 'KLEUR TEKST', 'VORM TEKST', 'NUMMER KLEUR'];
+			let blocks = [block_one, block_two, block_three, block_four];
 			let answers = [];
 
 			let question = [];
 
-			let digit_one = Math.ceil(Math.random()*3);
-			let digit_two = Math.ceil(Math.random()*3);
+			let digit_one = Math.ceil(Math.random()*4);
+			let digit_two = Math.ceil(Math.random()*4);
 			if (digit_one == digit_two){
-				if (digit_two == 3) {
+				if (digit_two == 4) {
 					digit_two = 3;
 				} else {
 					digit_two += 1;
@@ -178,7 +178,7 @@ function startHack(){
 			question.push(`${promptTwo} (${digit_two})`);
 			
 			let promptBlocks = [];
-			for (i=0; i<3; i++) {
+			for (i=0; i<4; i++) {
 				if (numbers[i] == digit_one) {
 					promptBlocks.unshift(blocks[i]);
 				} else if (numbers[i] == digit_two) {
@@ -210,7 +210,7 @@ function startHack(){
 						bgs.push(new_color);
 					}
 				}
-				while (bgs.length < 3) {
+				while (bgs.length < 4) {
 					new_color = colors[Math.floor(Math.random()*8)];
 					if (new_color != bgs[bgs.length-2]) {
 						bgs.push(new_color);
@@ -224,7 +224,7 @@ function startHack(){
 				
 				let block_shape = document.createElement('div');
 				block_shape.className = 'internalShape';
-				let shape_form = shapes[Math.floor(Math.random()*3)];
+				let shape_form = shapes[Math.floor(Math.random()*4)];
 				block_shape.className += ' '+shape_form;
 				block_shape.style.backgroundColor = colorPalette[bgs[1]];
 				blocks[i].append(block_shape);
@@ -239,12 +239,12 @@ function startHack(){
 				let block_number_text = document.createElement('p');
 				block_number_text.className = 'numberText';
 				block_number_text.style.color = colorPalette[bgs[3]];
-				block_number_text.innerText = String(Math.ceil(Math.random()*3))
+				block_number_text.innerText = String(Math.ceil(Math.random()*4))
 				blocks[i].append(block_number_text);
 				let block_shape_text = document.createElement('p');
-				block_shape_text.className = 'VORMText';
+				block_shape_text.className = 'shapeText';
 				block_shape_text.style.color = block_text_backgroundColor;
-				let shape_text = shapes[Math.floor(Math.random()*3)];
+				let shape_text = shapes[Math.floor(Math.random()*4)];
 				block_shape_text.innerText = shape_text;
 				blocks[i].append(block_shape_text);
 				if (promptBlocks[0] == blocks[i]){
